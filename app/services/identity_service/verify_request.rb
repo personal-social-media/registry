@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module IdentityService
   class VerifyRequest
     attr_reader :original_url, :public_key, :signed_original_url, :user_agent

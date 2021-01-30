@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 {
   identity: render(partial: "identities/identity", locals: { identity: @identity })
 }

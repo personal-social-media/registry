@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module NodeVerifyRequest
   def verify_node_request
     head 403 unless IdentityService::VerifyRequest.new(

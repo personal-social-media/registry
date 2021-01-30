@@ -10,10 +10,7 @@ gem "sass-rails", ">= 6"
 gem "webpacker", "~> 5.0"
 gem "turbolinks", "~> 5"
 gem "bootsnap", ">= 1.4.4", require: false
-
-group :development, :test do
-  gem "sqlite3", "~> 1.4"
-end
+gem "pg", "~> 1.2", ">= 1.2.3"
 
 group :development do
   gem "web-console", ">= 4.1.0"
