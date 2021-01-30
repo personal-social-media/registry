@@ -1,0 +1,23 @@
+app:
+  tty: true
+  stdin_open: true
+  command: foreman start -f Procfile.dev
+  build: "./.build/docker"
+  links:
+    - postgres
+  volumes:
+    - ./:/app
+    - ~/.bash_history:/root/.bash_history
+    - .build/.bundle-cache-dir/app:/usr/local/bundle/
+  ports:
+    - "3000:3000"
+  environment:
+    - DOCKER=true
+    - RUBYOPT=-W:no-deprecated -W:no-experimental
+
+postgres:
+  image: postgres:12-alpine
+  volumes:
+    - .build/.db:/var/lib/postgresql/data
+  environment:
+    - POSTGRES_PASSWORD=1234
