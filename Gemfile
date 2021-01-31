@@ -23,6 +23,7 @@ end
 group :development do
   gem "foreman"
   gem "annotate"
+  gem 'git-version-bump', '~> 0.17.1'
 end
 
 group :development, :test do
