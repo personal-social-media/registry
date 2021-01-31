@@ -37,5 +37,9 @@ module Psm
 
     config.time_zone = "UTC"
     config.active_record.default_timezone = :utc
+
+    config.assets.configure do |env|
+      env.export_concurrent = false
+    end
   end
 end
