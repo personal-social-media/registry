@@ -1,5 +1,5 @@
 <%= form_with url: admin_path, scope: :login do |f| %>
   <%= f.text_field :username, required: true, placeholder: "Username" %>
-  <%= f.text_field :password, required: true, placeholder: "Password" %>
+  <%= f.password_field :password, required: true, placeholder: "Password" %>
   <%= f.submit "Login" %>
 <% end %>
