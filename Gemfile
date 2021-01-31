@@ -49,3 +49,4 @@ gem "async-http", require: %w(async/http/internet async/barrier)
 gem "rack-cors"
 gem "will_paginate"
 gem "oj"
+gem "rails_admin", "~> 2.0", ">= 2.0.2"

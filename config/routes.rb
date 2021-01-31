@@ -8,5 +8,6 @@ Rails.application.routes.draw do
 
   constraints Basic do
     mount Sidekiq::Web => '/sidekiq'
+    mount RailsAdmin::Engine => '/super-admin', as: 'rails_admin'
   end
 end

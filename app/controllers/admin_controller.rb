@@ -11,6 +11,6 @@ class AdminController < ApplicationController
       return render :login
     end
 
-    redirect_to "/sidekiq"
+    redirect_to "/super-admin"
   end
 end
