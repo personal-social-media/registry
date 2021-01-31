@@ -108,5 +108,10 @@ jobs:
           bundle exec rails db:setup
 
       - name: Run tests
+        env:
+          RAILS_ENV: test
+          DEV_PG_HOST: localhost
+          DEV_PG_USER: myapp
+          DEV_PG_PASSWORD: 1234
         run: |
           bundle exec rspec
