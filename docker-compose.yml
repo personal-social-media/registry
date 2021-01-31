@@ -1,7 +1,7 @@
 app:
   tty: true
   stdin_open: true
-  command: foreman start -f Procfile.dev
+  command: foreman start
   build: "./.build/docker"
   links:
     - postgres
