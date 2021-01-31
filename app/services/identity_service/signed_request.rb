@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module IdentityService
   module SignedRequest
     def signed_headers(url)
