@@ -41,3 +41,4 @@ yarn-debug.log*
 .idea/
 .build/.bundle-cache-dir
 .build/.db
+.build/thor/ssh.rb
