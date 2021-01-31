@@ -115,6 +115,7 @@ jobs:
           bundle exec rspec
 
   deploy:
+    name: Deploy
     runs-on: ubuntu-latest
     env:
       REGISTRY_DEPLOYMENT_URL: ${{ secrets.RegistryDeploymentUrl }}
