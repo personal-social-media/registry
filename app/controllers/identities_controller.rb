@@ -8,7 +8,7 @@ class IdentitiesController < ApplicationController
     search = params[:q]
     return @identities = [] if search.blank?
 
-    @identities = Identity.username_similar(search).limit(8)
+    @identities = Identity.username_similar(search).paginate(page: params[:page], per_page: 8)
   end
 
   def create
