@@ -82,9 +82,13 @@ GEM
     bindex (0.8.1)
     bootsnap (1.6.0)
       msgpack (~> 1.0)
+    brakeman (5.0.0)
     bugsnag (6.19.0)
       concurrent-ruby (~> 1.0)
     builder (3.2.4)
+    bundler-audit (0.7.0.1)
+      bundler (>= 1.2.0, < 3)
+      thor (>= 0.18, < 2)
     concurrent-ruby (1.1.8)
     connection_pool (2.2.3)
     console (1.10.1)
@@ -280,7 +284,9 @@ DEPENDENCIES
   annotate
   async-http
   bootsnap (>= 1.4.4)
+  brakeman
   bugsnag
+  bundler-audit
   database_cleaner (~> 1.8, >= 1.8.5)
   factory_bot_rails (~> 6.1)
   foreman
