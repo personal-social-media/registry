@@ -118,9 +118,7 @@ jobs:
       runs-on: ubuntu-latest
       env:
         REGISTRY_DEPLOYMENT_URL: ${{ secrets.RegistryDeploymentUrl }}
-      needs:
-        - test
-        - linters
+      needs: test
       if: github.ref == 'refs/heads/master'
       steps:
         - name: Deploy app
