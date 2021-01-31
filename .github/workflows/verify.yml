@@ -114,13 +114,13 @@ jobs:
         run: |
           bundle exec rspec
 
-    deploy:
-      runs-on: ubuntu-latest
-      env:
-        REGISTRY_DEPLOYMENT_URL: ${{ secrets.RegistryDeploymentUrl }}
-      needs: test
-      if: github.ref == 'refs/heads/master'
-      steps:
-        - name: Deploy app
-          run: |
-            curl "$REGISTRY_DEPLOYMENT_URL"
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      REGISTRY_DEPLOYMENT_URL: ${{ secrets.RegistryDeploymentUrl }}
+    needs: test
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - name: Deploy app
+        run: |
+          curl "$REGISTRY_DEPLOYMENT_URL"
