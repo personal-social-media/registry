@@ -35,4 +35,10 @@ group :test do
   gem "database_cleaner", "~> 1.8", ">= 1.8.5"
 end
 
+group :production do
+  gem "bugsnag"
+end
+
 gem "jb", "~> 0.8.0"
+gem "hiredis", "~> 0.6.3", require: %w(redis redis/connection/hiredis)
+gem "sidekiq", "~> 6.1", ">= 6.1.2"

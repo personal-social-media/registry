@@ -20,9 +20,9 @@
 #  index_identities_on_username    (username)
 #
 class Identity < ApplicationRecord
-  scope :username_similar, ->(username) {
+  scope :username_similar, ->(username) do
     quoted_name = ActiveRecord::Base.connection.quote_string(username)
-    where("username % :username", name: username).
+    where("username % ?", username).
       order(Arel.sql("similarity(name, '#{quoted_name}') DESC"))
-  }
+  end
 end

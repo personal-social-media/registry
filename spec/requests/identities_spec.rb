@@ -20,6 +20,17 @@ RSpec.describe "/identities" do
         expect(json[:identities].size).to eq 0
       end
     end
+
+    context "joe" do
+      let(:url) { "/identities?q=username" }
+
+      it "gets" do
+        subject
+
+        expect(response).to have_http_status(:ok)
+        expect(json[:identities].size).to eq 8
+      end
+    end
   end
 
   describe "POST /identities" do

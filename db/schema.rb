@@ -12,6 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2021_01_30_191137) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "pg_trgm"
+  enable_extension "plpgsql"
+
   create_table "identities", force: :cascade do |t|
     t.text "username", null: false
     t.text "name", null: false
@@ -20,9 +24,9 @@ ActiveRecord::Schema.define(version: 2021_01_30_191137) do
     t.string "server_ip", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["name"], name: "index_identities_on_name"
+    t.index ["name"], name: "index_identities_on_name", opclass: :gin_trgm_ops, using: :gin
     t.index ["public_key"], name: "index_identities_on_public_key"
-    t.index ["username"], name: "index_identities_on_username"
+    t.index ["username"], name: "index_identities_on_username", opclass: :gin_trgm_ops, using: :gin
   end
 
 end

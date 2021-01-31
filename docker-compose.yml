@@ -5,6 +5,7 @@ app:
   build: "./.build/docker"
   links:
     - postgres
+    - redis
   volumes:
     - ./:/app
     - ~/.bash_history:/root/.bash_history
@@ -21,3 +22,6 @@ postgres:
     - .build/.db:/var/lib/postgresql/data
   environment:
     - POSTGRES_PASSWORD=1234
+
+redis:
+  image: redis:alpine
