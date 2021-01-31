@@ -47,6 +47,5 @@ gem "hiredis", "~> 0.6.3", require: %w(redis redis/connection/hiredis)
 gem "sidekiq", "~> 6.1", ">= 6.1.2", require: %w(sidekiq/web)
 gem "async-http", require: %w(async/http/internet async/barrier)
 gem "rack-cors"
-gem "will_paginate"
 gem "oj"
 gem "rails_admin", "~> 2.0", ">= 2.0.2"
