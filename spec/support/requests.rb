@@ -16,6 +16,6 @@ module RequestsHelper
 end
 
 RSpec.configure do |config|
-  config.include RequestsHelper
-  config.include IdentityService::SignedRequest
+  config.include RequestsHelper, type: :request
+  config.include IdentityService::SignedRequest, type: :request
 end
