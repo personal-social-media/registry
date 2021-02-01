@@ -35,7 +35,7 @@ group :development, :test do
 end
 
 group :test do
-  gem "database_cleaner", "~> 1.8", ">= 1.8.5"
+  gem "database_cleaner", "~> 2.0"
 end
 
 group :production do
