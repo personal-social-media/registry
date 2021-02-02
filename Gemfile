@@ -27,7 +27,7 @@ group :development do
 end
 
 group :development, :test do
-  gem "rubocop-rails_config", "~> 1.2", ">= 1.2.1"
+  gem "rubocop-rails_config", "~> 1.2"
   gem "rspec-rails", "~> 4.0", ">= 4.0.2"
   gem "factory_bot_rails", "~> 6.1"
   gem "bundler-audit"
@@ -35,7 +35,7 @@ group :development, :test do
 end
 
 group :test do
-  gem "database_cleaner", "~> 1.8", ">= 1.8.5"
+  gem "database_cleaner", "~> 2.0"
 end
 
 group :production do
