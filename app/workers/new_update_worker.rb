@@ -17,7 +17,7 @@ class NewUpdateWorker < ApplicationWorker
   def handle_group(group)
     group.each do |identity|
       barrier.async do
-        Timeout::timeout(2000) do
+        Timeout.timeout(2000) do
           url = build_url(identity)
           internet.get(url, signed_headers(url).to_a)
           identity.touch
