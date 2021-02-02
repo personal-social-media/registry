@@ -84,7 +84,7 @@ GEM
     async-pool (0.3.3)
       async (~> 1.25)
     bindex (0.8.1)
-    bootsnap (1.6.0)
+    bootsnap (1.7.0)
       msgpack (~> 1.0)
     brakeman (5.0.0)
     bugsnag (6.19.0)
