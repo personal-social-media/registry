@@ -3,6 +3,7 @@
 class IdentitiesController < ApplicationController
   include NodeVerifyRequest
   before_action :verify_node_request, only: %i(create)
+  skip_before_action :verify_authenticity_token, only: %i(create)
 
   def index
     search = params[:q]
@@ -12,7 +13,8 @@ class IdentitiesController < ApplicationController
   end
 
   def create
-    @identity = Identity.find_or_initialize_by(public_key: request.headers["Public-Key"]).tap do |id|
+    public_key = Base32.decode(request.headers["Public-Key"])
+    @identity = Identity.find_or_initialize_by(public_key: public_key).tap do |id|
       permitted_params = params.require(:identity).permit(:username, :name, avatars: {})
       unless id.persisted?
         id.username = permitted_params[:username]
