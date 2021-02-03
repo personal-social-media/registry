@@ -4,8 +4,8 @@
 #
 # Table name: identities
 #
-#  id         :integer          not null, primary key
-#  avatar_url :text
+#  id         :bigint           not null, primary key
+#  avatars    :text
 #  name       :text             not null
 #  public_key :text             not null
 #  server_ip  :string           not null
@@ -15,9 +15,9 @@
 #
 # Indexes
 #
-#  index_identities_on_name        (name)
+#  index_identities_on_name        (name) USING gin
 #  index_identities_on_public_key  (public_key)
-#  index_identities_on_username    (username)
+#  index_identities_on_username    (username) USING gin
 #
 require "rails_helper"
 

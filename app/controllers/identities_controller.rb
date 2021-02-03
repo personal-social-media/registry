@@ -13,12 +13,12 @@ class IdentitiesController < ApplicationController
 
   def create
     @identity = Identity.find_or_initialize_by(public_key: request.headers["Public-Key"]).tap do |id|
-      permitted_params = params.require(:identity).permit(:username, :name, :avatar_url)
+      permitted_params = params.require(:identity).permit(:username, :name, avatars: {})
       unless id.persisted?
         id.username = permitted_params[:username]
       end
       id.name = permitted_params[:name]
-      id.avatar_url = permitted_params[:avatar_url]
+      id.avatars = permitted_params[:avatars]
       id.server_ip = ip
       id.save!
     end
