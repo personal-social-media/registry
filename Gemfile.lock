@@ -83,6 +83,7 @@ GEM
       async (~> 1.14)
     async-pool (0.3.3)
       async (~> 1.25)
+    base32 (0.3.4)
     bindex (0.8.1)
     bootsnap (1.7.0)
       msgpack (~> 1.0)
@@ -334,6 +335,7 @@ PLATFORMS
 DEPENDENCIES
   annotate
   async-http
+  base32 (~> 0.3.4)
   bootsnap (>= 1.4.4)
   brakeman
   bugsnag

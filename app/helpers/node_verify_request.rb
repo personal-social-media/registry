@@ -6,7 +6,8 @@ module NodeVerifyRequest
       request.original_url,
       request.headers["Public-Key"],
       request.headers["Url-Signed"],
-      request.headers["User-Agent"],
+      request.headers["Real-User-Agent"],
+      request.headers["Client"]
     ).call!
   end
 end
