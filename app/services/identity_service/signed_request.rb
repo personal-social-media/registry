@@ -7,7 +7,8 @@ module IdentityService
         "Real-User-Agent": "Personal Social Media",
         "Url-Signed": Base32.encode(_private_key.sign(OpenSSL::Digest::SHA256.new, url)),
         "Public-Key": Base32.encode(_private_key.public_key.to_pem),
-        "Client": "server"
+        "Client": "server",
+        "Gateway": "127.0.0.1"
       }
     end
 
