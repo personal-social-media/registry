@@ -5,8 +5,8 @@ module IdentityService
     def signed_headers(url)
       {
         "Real-User-Agent": "Personal Social Media",
-        "Url-Signed": _private_key.sign(OpenSSL::Digest::SHA256.new, url),
-        "Public-Key": _private_key.public_key.to_pem,
+        "Url-Signed": Base32.encode(_private_key.sign(OpenSSL::Digest::SHA256.new, url)),
+        "Public-Key": Base32.encode(_private_key.public_key.to_pem),
         "Client": "server"
       }
     end
