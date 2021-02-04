@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class SslController < ApplicationController
-  include NodeVerifyRequest
-  before_action :verify_node_request, only: %i(create)
+  # include NodeVerifyRequest
+  # before_action :verify_node_request, only: %i(create)
 
   def create
     @ssl_service = SslService::Create.new(ip)
