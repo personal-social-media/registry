@@ -4,11 +4,8 @@ require "rails_helper"
 
 RSpec.describe "ssl" do
   describe "POST /ssl" do
-    let(:signed_url) { "http://www.example.com/ssl" }
-    let(:headers) { signed_headers(signed_url) }
-
     subject do
-      post "/ssl", headers: headers
+      post "/ssl"
     end
 
     it "ok" do
