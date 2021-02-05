@@ -99,12 +99,12 @@ GEM
     console (1.10.1)
       fiber-local
     crass (1.0.6)
-    database_cleaner (2.0.0)
+    database_cleaner (2.0.1)
       database_cleaner-active_record (~> 2.0.0)
     database_cleaner-active_record (2.0.0)
       activerecord (>= 5.a)
       database_cleaner-core (~> 2.0.0)
-    database_cleaner-core (2.0.0)
+    database_cleaner-core (2.0.1)
     diff-lcs (1.4.4)
     erubi (1.10.0)
     factory_bot (6.1.0)
@@ -122,7 +122,7 @@ GEM
       temple (>= 0.8.0)
       tilt
     hiredis (0.6.3)
-    i18n (1.8.7)
+    i18n (1.8.8)
       concurrent-ruby (~> 1.0)
     jb (0.8.0)
     jquery-rails (4.4.0)
