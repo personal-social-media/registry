@@ -23,7 +23,7 @@ class Identity < ApplicationRecord
   scope :username_similar, ->(username) do
     quoted_name = ActiveRecord::Base.connection.quote_string(username)
     where("username % ?", username).
-      order(Arel.sql("similarity(name, '#{quoted_name}') DESC"))
+      order(Arel.sql("similarity(username, '#{quoted_name}') DESC"))
   end
 
   validates :public_key, presence: true, uniqueness: true
