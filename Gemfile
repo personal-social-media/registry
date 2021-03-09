@@ -48,5 +48,5 @@ gem "sidekiq", "~> 6.1", ">= 6.1.2", require: %w(sidekiq/web)
 gem "async-http", require: %w(async/http/internet async/barrier)
 gem "rack-cors"
 gem "oj"
-gem "rails_admin", "~> 2.0", ">= 2.0.2"
+gem "rails_admin", "~> 2.1"
 gem "base32", "~> 0.3.4"
