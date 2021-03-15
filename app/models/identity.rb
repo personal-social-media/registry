@@ -9,6 +9,7 @@
 #  name       :text             not null
 #  public_key :text             not null
 #  server_ip  :string           not null
+#  signature  :text             default(""), not null
 #  username   :text             not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -26,10 +27,19 @@ class Identity < ApplicationRecord
       order(Arel.sql("similarity(username, '#{quoted_name}') DESC"))
   end
 
+  serialize :avatars, JSON
   validates :public_key, presence: true, uniqueness: true
   validates :name, presence: true
   validates :username, presence: true
   validates :server_ip, presence: true
 
-  serialize :avatars, JSON
+  if Rails.env.production?
+    validates :signature, presence: true
+    validate :validate_signature
+  end
+
+  private
+    def validate_signature
+      errors.add(:signature, "invalid") unless IdentityService::ValidateSignature.new(self).call!
+    end
 end

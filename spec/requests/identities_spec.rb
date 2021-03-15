@@ -36,7 +36,7 @@ RSpec.describe "/identities" do
   describe "POST /identities" do
     let(:url) { "/identities" }
     let(:signed_url) { "http://www.example.com/identities" }
-    let(:params) { { identity: { name: "a", username: "a" } } }
+    let(:params) { { identity: { name: "a", username: "a", signature: "a" } } }
     let(:headers) { signed_headers(signed_url) }
 
     subject do

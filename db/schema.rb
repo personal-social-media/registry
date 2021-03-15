@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_03_064050) do
+ActiveRecord::Schema.define(version: 2021_03_15_215550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2021_02_03_064050) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "avatars"
+    t.text "signature", default: "", null: false
     t.index ["name"], name: "index_identities_on_name", opclass: :gin_trgm_ops, using: :gin
     t.index ["public_key"], name: "index_identities_on_public_key"
     t.index ["username"], name: "index_identities_on_username", opclass: :gin_trgm_ops, using: :gin

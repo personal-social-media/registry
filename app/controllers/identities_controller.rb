@@ -15,13 +15,14 @@ class IdentitiesController < ApplicationController
   def create
     public_key = Base32.decode(request.headers["Public-Key"])
     @identity = Identity.find_or_initialize_by(public_key: public_key).tap do |id|
-      permitted_params = params.require(:identity).permit(:username, :name, avatars: {})
+      permitted_params = params.require(:identity).permit(:username, :name, :signature, avatars: {})
       unless id.persisted?
         id.username = permitted_params[:username]
       end
       id.name = permitted_params[:name]
       id.avatars = permitted_params[:avatars]
       id.server_ip = ip
+      id.signature = permitted_params[:signature]
       id.save!
     end
   end

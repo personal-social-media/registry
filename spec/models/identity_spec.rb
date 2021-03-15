@@ -9,6 +9,7 @@
 #  name       :text             not null
 #  public_key :text             not null
 #  server_ip  :string           not null
+#  signature  :text             default(""), not null
 #  username   :text             not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
