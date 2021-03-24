@@ -143,7 +143,7 @@ GEM
       activerecord
       kaminari-core (= 1.2.1)
     kaminari-core (1.2.1)
-    listen (3.4.1)
+    listen (3.5.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     loofah (2.9.0)
@@ -346,7 +346,7 @@ DEPENDENCIES
   git-version-bump (~> 0.17.1)
   hiredis (~> 0.6.3)
   jb (~> 0.8.0)
-  listen (~> 3.3)
+  listen (~> 3.5)
   oj
   pg (~> 1.2, >= 1.2.3)
   puma (~> 5.2)
