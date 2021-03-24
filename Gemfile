@@ -14,7 +14,7 @@ gem "pg", "~> 1.2", ">= 1.2.3"
 
 group :development do
   gem "web-console", ">= 4.1.0"
-  gem "listen", "~> 3.3"
+  gem "listen", "~> 3.5"
   gem "spring"
 end
 
