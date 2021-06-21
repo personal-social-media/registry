@@ -27,7 +27,7 @@ group :development do
 end
 
 group :development, :test do
-  gem "rubocop-rails_config", "~> 1.3"
+  gem "rubocop-rails_config", "~> 1.5"
   gem "rspec-rails", "~> 5.0"
   gem "factory_bot_rails", "~> 6.1"
   gem "bundler-audit"
